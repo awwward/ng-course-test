@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public notice = '(notice placeholder)';
-  public currentUser;
+
   public offset = 200;
 
   public user =  {
@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
   public mycolor = 'blue';
 
   public myClass = 'red';
-  public selectedUser;
 
   changeColor(color) {
     this.mycolor = color;
