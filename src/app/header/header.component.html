@@ -1,0 +1,19 @@
+<ul>
+  <li *ngFor="let item of userList">
+    <app-user-card *ngIf='userCardIsVisible' [user2]="user" [newClass]="classInput.value"></app-user-card>
+  </li>
+</ul>
+
+
+
+<p (click)='mycolor = "yellow"' [style.color]="mycolor" [attr.data-offset]="offset"
+   (mouseover)=" changeColor('purple')">
+  sdfasdf
+</p>
+<input #classInput type="text"/>
+<button (click)="changeColor(classInput.value)">Change</button>
+
+<button (click)="showUsercard()">ToggleUserCard</button>
+
+
+
