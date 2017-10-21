@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -8,41 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 
 export class UserCardComponent implements OnInit {
 
-  public classname;
-  @Input() user2;
-  @Input() newClass;
+  @Input('userSent') userReceived;
+  @Output() userSelected: EventEmitter<any> = new EventEmitter();
 
   constructor() {
-    console.log(this.user2);
-  }
-
-  private multiplier = 1.04;
-
-  calc(input: number) {
-    return input * this.multiplier;
   }
 
   ngOnInit() {
-    console.log(this.user2);
   }
 
-  private classes: string[] = ['red', 'green', 'blue'];
-  public myclass: string = this.changeClassReturn();
-
-  changeClass() {
-    this.myclass = this.classes.pop();
+  selectUser() {
+    this.userSelected.emit();
   }
-
-  changeClassReturn() {
-    return this.classes.pop();
-  }
-
-  length<MyType extends HasLength>(input: MyType){
-    return input.length
-  }
-}
-
-
-interface HasLength{
-  length: number;
 }

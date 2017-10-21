@@ -1,10 +1,10 @@
 <ul>
-  <li *ngFor="let item of userList">
-    <app-user-card *ngIf='userCardIsVisible' [user2]="user" [newClass]="classInput.value"></app-user-card>
+  <li *ngFor="let user of userList">
+    <app-user-card *ngIf='userCardIsVisible' [userSent]="user" (userSelected)="selectedUser = user"></app-user-card>
   </li>
 </ul>
 
-
+<h1>{{selectedUser?.name}}</h1>
 
 <p (click)='mycolor = "yellow"' [style.color]="mycolor" [attr.data-offset]="offset"
    (mouseover)=" changeColor('purple')">
