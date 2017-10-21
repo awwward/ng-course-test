@@ -15,6 +15,7 @@ export class UserCardComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   selectUser() {
